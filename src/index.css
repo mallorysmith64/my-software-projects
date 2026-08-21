@@ -438,6 +438,11 @@ main {
   font-size: 1.1rem;
 }
 
+header {
+  display:flex;
+  justify-content:center;
+}
+
 /* Animations */
 @keyframes slideInDown {
   from {
