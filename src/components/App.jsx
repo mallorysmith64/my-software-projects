@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Nav from "./Nav.jsx";
 import Projects from "./Projects.jsx";
+import Footer from "./Footer.jsx";
 
 class App extends Component {
   render() {
@@ -13,6 +14,7 @@ class App extends Component {
             <Route path="/" element={<Projects />} />
           </Routes>
         </main>
+        <Footer />
       </Router>
     );
   }

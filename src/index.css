@@ -518,6 +518,25 @@ main {
   }
 }
 
+/* Footer */
+.footer {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 20px;
+  text-align: center;
+  margin-top: 40px;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer p {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
 /* Utility Classes */
 .center {
   text-align: center;

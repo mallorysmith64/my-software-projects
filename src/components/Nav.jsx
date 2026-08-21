@@ -6,7 +6,7 @@ function Nav() {
     <nav className="navbar">
       <div className="nav-wrapper">
         <Link to="/" className="brand-logo">
-          My Portfolio
+          My Software Projects
         </Link>
         <ul className="right">
           <li>
