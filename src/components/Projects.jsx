@@ -8,7 +8,6 @@ class Projects extends Component {
       <>
         <header className="header" id="projects">
           <h2>Top Projects for {getYear} </h2>
-          <li>**Multiple projects are under development**</li>
         </header>
 
         <div className="project-container">
@@ -219,7 +218,7 @@ class Projects extends Component {
               <div className="card-image waves-effect waves-block waves-light">
                 <img
                   className="activator"
-                  src={images.tv}
+                  src={images.tv_guide}
                   alt="tv guide project"
                 />
               </div>
