@@ -26,7 +26,7 @@ class Projects extends Component {
                   </i>
                 </div>
               </div>
-              <div className="card-action">
+              {/* <div className="card-action">
                 <a href="" className="waves-effect waves-light btn">
                   Live
                 </a>
@@ -36,7 +36,7 @@ class Projects extends Component {
                 >
                   Source
                 </a>
-              </div>
+              </div> */}
               <div className="card-reveal">
                 <strong className="card-title grey-text text-darken-4">
                   Primate Image Classifier
@@ -126,9 +126,9 @@ class Projects extends Component {
                 </div>
               </div>
               <div className="card-action">
-                <a href="" className="waves-effect waves-light btn">
+                {/* <a href="" className="waves-effect waves-light btn">
                   Live
-                </a>
+                </a> */}
                 <a
                   href="https://github.com/mallorysmith64/google-search"
                   className="waves-effect waves-light btn"
@@ -178,9 +178,9 @@ class Projects extends Component {
                 </div>
               </div>
               <div className="card-action">
-                <a href="" className="waves-effect waves-light btn">
+                {/* <a href="" className="waves-effect waves-light btn">
                   Live
-                </a>
+                </a> */}
                 <a
                   href="https://github.com/mallorysmith64/Reddit-Capstone"
                   className="waves-effect waves-light btn"
