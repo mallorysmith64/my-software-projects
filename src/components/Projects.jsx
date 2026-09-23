@@ -1,84 +1,61 @@
 import React, { useState } from "react";
 import images from "../ImageHelper.jsx";
 
-const ProjectModal = ({ project, isOpen, onClose }) => {
-  if (!isOpen) return null;
+const ProjectCard = ({ project }) => {
+  const [isRevealed, setIsRevealed] = useState(false);
 
   return (
-    <div className="modal-overlay" onClick={onClose}>
-      <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-        <div className="modal-header">
-          <h3>{project.title}</h3>
-          <button className="modal-close-btn" onClick={onClose}>
-            ✕
-          </button>
-        </div>
-        <div className="modal-body">
-          <article className="card-description">
+    <div className="card">
+      <div className="card-image waves-effect waves-block waves-light">
+        <img src={project.image} alt={project.title} />
+      </div>
+      <div className="card-content">
+        <span
+          className="card-title activator"
+          onClick={() => setIsRevealed(true)}
+        >
+          {project.title}
+          <i className="material-icons right">more_vert</i>
+        </span>
+      </div>
+      <div className={`card-reveal ${isRevealed ? "active" : ""}`}>
+        <span className="card-title" onClick={() => setIsRevealed(false)}>
+          {project.title}
+          <i className="material-icons right">close</i>
+        </span>
+        <article className="card-description">
+          <p>
             <strong>Overview</strong>
-            <p>{project.overview}</p>
+          </p>
+          <p>{project.overview}</p>
 
-            {project.features && (
-              <>
+          {project.features && (
+            <>
+              <p>
                 <strong>Features</strong>
-                <p>{project.features}</p>
-              </>
-            )}
+              </p>
+              <p>{project.features}</p>
+            </>
+          )}
 
+          <p>
             <strong>Technologies Used</strong>
-            <p>{project.technologies}</p>
-          </article>
-        </div>
+          </p>
+          <p>{project.technologies}</p>
+        </article>
+      </div>
+      <div className="card-action">
+        {project.liveUrl && (
+          <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+            Live
+          </a>
+        )}
+        {!project.liveUrl && <button disabled>Live</button>}
+        <a href={project.sourceUrl} target="_blank" rel="noopener noreferrer">
+          Code
+        </a>
       </div>
     </div>
-  );
-};
-
-const ProjectCard = ({ project }) => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
-  return (
-    <>
-      <div className="card">
-        {project.image && (
-          <div className="card-image">
-            <img src={project.image} alt={project.title} />
-          </div>
-        )}
-        <div className="card-content">
-          <div
-            className="card-title"
-            onClick={() => setIsModalOpen(true)}
-            title="Click to view details"
-          >
-            {project.title}
-          </div>
-          <p className="card-description-preview">{project.overview}</p>
-        </div>
-        <div className="card-action">
-          {project.liveUrl && (
-            <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
-              Live
-            </a>
-          )}
-          {!project.liveUrl && <button disabled>Live</button>}
-          <a href={project.sourceUrl} target="_blank" rel="noopener noreferrer">
-            Source
-          </a>
-          <button
-            onClick={() => setIsModalOpen(true)}
-            style={{ backgroundColor: "#8b5cf6" }}
-          >
-            Details
-          </button>
-        </div>
-      </div>
-      <ProjectModal
-        project={project}
-        isOpen={isModalOpen}
-        onClose={() => setIsModalOpen(false)}
-      />
-    </>
   );
 };
 
