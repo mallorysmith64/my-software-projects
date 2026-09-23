@@ -18,7 +18,7 @@ html, body, #root {
   --primary-light: #60a5fa;
   --accent: #8b5cf6;
   --accent-light: #a78bfa;
-  --bg: #f8f9fa;
+  --main-color: rgb(154, 196, 241);
   --bg-secondary: #ffffff;
   --text-primary: #1a1a1a;
   --text-secondary: #6b7280;
@@ -41,7 +41,7 @@ main {
 
 /* Header Styles */
 .header {
-  background-color: var(--bg);
+  background-color: var(--main-color);
   padding: 60px 20px 40px;
   text-align: center;
 }
@@ -58,7 +58,7 @@ main {
   max-width: 1400px;
   margin: 0 auto;
   padding: 40px 20px;
-  background-color: var(--bg);
+  background-color: var(--main-color);
 }
 
 .project-row {
@@ -103,20 +103,6 @@ main {
   justify-content: center;
   color: white;
   font-weight: 600;
-}
-
-.waves-effect {
-  position: relative;
-  overflow: hidden;
-  cursor: pointer;
-}
-
-.waves-block {
-  display: block;
-}
-
-.waves-light {
-  color: white;
 }
 
 .card-image img {
@@ -250,7 +236,7 @@ main {
 
 /* Footer */
 .footer {
-  background-color: #1f2937;
+  background-color: var(--main-color);
   color: white;
   padding: 32px 20px;
   text-align: center;
