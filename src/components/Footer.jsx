@@ -4,8 +4,8 @@ function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="footer has-background-dark has-text-white-ter">
-      <div className="content has-text-centered">
+    <footer className="footer">
+      <div className="footer-container">
         <p>Created by Mallory Smith © {currentYear}</p>
       </div>
     </footer>

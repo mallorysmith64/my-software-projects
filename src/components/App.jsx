@@ -1,21 +1,16 @@
-import React, { Component } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import React from "react";
 import Projects from "./Projects.jsx";
 import Footer from "./Footer.jsx";
 
-class App extends Component {
-  render() {
-    return (
-      <Router future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
-        <main>
-          <Routes>
-            <Route path="/" element={<Projects />} />
-          </Routes>
-        </main>
-        <Footer />
-      </Router>
-    );
-  }
-}
+const App = () => {
+  return (
+    <>
+      <main>
+        <Projects />
+      </main>
+      <Footer />
+    </>
+  );
+};
 
 export default App;

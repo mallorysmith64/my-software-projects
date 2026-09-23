@@ -1,477 +1,190 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import images from "../ImageHelper.jsx";
 
-class Projects extends Component {
-  render() {
-    let getYear = new Date().getFullYear();
-    return (
-      <>
-        <header className="header" id="projects">
-          <h2>Top Projects for {getYear} </h2>
-        </header>
+const ProjectModal = ({ project, isOpen, onClose }) => {
+  if (!isOpen) return null;
 
-        <div className="project-container">
-          {/* Row 1: Primate Image Classifier, Form Generator, Cat Search Engine */}
-          <div className="project-row">
-            <div className="card sticky-action">
-              <div className="card-content">
-                <div className="card-title activator">
-                  Primate Image Classifier
-                  <i
-                    className="material-icons right"
-                    arial-label="more options"
-                  >
-                    more_vert
-                  </i>
-                </div>
-              </div>
-              <div className="card-action">
-                {/* placeholder url */}
-                <a href="https://github.com/mallorysmith64/primate-species-classifier" className="button is-primary">
-                  Live
-                </a>
-                <a
-                  href="https://github.com/mallorysmith64/primate-species-classifier"
-                  className="button is-primary"
-                >
-                  Source
-                </a>
-              </div>
-              <div className="card-reveal">
-                <strong className="card-title grey-text text-darken-4">
-                  Primate Image Classifier
-                  <i className="material-icons right" arial-label="close">
-                    close
-                  </i>
-                </strong>
-                <article className="card-description">
-                  <strong>Overview:</strong>
-                  <p>
-                    You can classify images of primates using machine learning.
-                  </p>
-                  <strong>Technologies Used:</strong>
-                  <p>PyTorch, Python</p>
-                </article>
-              </div>
-            </div>
-
-            <div className="card sticky-action">
-              <div className="card-image waves-effect waves-block waves-light">
-                <img
-                  className="activator"
-                  src={images.form_generator}
-                  alt="form generator project"
-                />
-              </div>
-              <div className="card-content">
-                <div className="card-title activator">
-                  Form Generator
-                  <i
-                    className="material-icons right"
-                    arial-label="more options"
-                  >
-                    more_vert
-                  </i>
-                </div>
-              </div>
-              <div className="card-action">
-                <a
-                  href="https://formgenerator.pro/"
-                  className="waves-effect waves-light btn"
-                >
-                  Live
-                </a>
-                <a
-                  href="https://github.com/mallorysmith64/form-generator"
-                  className="waves-effect waves-light btn"
-                >
-                  Source
-                </a>
-              </div>
-              <div className="card-reveal">
-                <strong className="card-title grey-text text-darken-4">
-                  Form Generator
-                  <i className="material-icons right" arial-label="close">
-                    close
-                  </i>
-                </strong>
-                <article className="card-description">
-                  <strong>Overview:</strong>
-                  <p>You can generate forms dynamically using this project.</p>
-                  <strong>Technologies Used:</strong>
-                  <p>
-                    React.js, JavaScript, Flask, Python, MongoDB, CSS, HTML5
-                  </p>
-                </article>
-              </div>
-            </div>
-
-            <div className="card sticky-action">
-              <div className="card-image waves-effect waves-block waves-light">
-                <img
-                  className="activator"
-                  src={images.catsearch}
-                  alt="cat search engine project"
-                />
-              </div>
-              <div className="card-content">
-                <div className="card-title activator">
-                  Cat Search Engine
-                  <i
-                    className="material-icons right"
-                    arial-label="more options"
-                  >
-                    more_vert
-                  </i>
-                </div>
-              </div>
-              <div className="card-action">
-                {/* placeholder url */}
-                <a href="https://github.com/mallorysmith64/google-search" className="waves-effect waves-light btn">
-                  Live
-                </a>
-                <a
-                  href="https://github.com/mallorysmith64/google-search"
-                  className="waves-effect waves-light btn"
-                >
-                  Source
-                </a>
-              </div>
-              <div className="card-reveal">
-                <strong className="card-title grey-text text-darken-4">
-                  Cat Search Engine
-                  <i className="material-icons right" arial-label="close">
-                    close
-                  </i>
-                </strong>
-                <article className="card-description">
-                  <strong>Overview:</strong>
-                  <p>You can search for cat memes and cat information.</p>
-                  <strong>Technologies Used:</strong>
-                  <p>
-                    React.js, JavaScript, Flask, Python, ElasticSearch, CSS
-                    Flexbox, HTML5
-                  </p>
-                </article>
-              </div>
-            </div>
-          </div>
-
-          {/* Row 2: Reddit, TV Guide, Minesweeper */}
-          <div className="project-row">
-            <div className="card sticky-action">
-              <div className="card-image waves-effect waves-block waves-light">
-                <img
-                  className="activator"
-                  src={images.reddit}
-                  alt="reddit project"
-                />
-              </div>
-              <div className="card-content">
-                <div className="card-title activator">
-                  Reddit
-                  <i
-                    className="material-icons right"
-                    arial-label="more options"
-                  >
-                    more_vert
-                  </i>
-                </div>
-              </div>
-              <div className="card-action">
-                <a href="https://github.com/mallorysmith64/Reddit-Capstone" className="waves-effect waves-light btn">
-                  Live
-                </a>
-                <a
-                  href="https://github.com/mallorysmith64/Reddit-Capstone"
-                  className="waves-effect waves-light btn"
-                >
-                  Source
-                </a>
-              </div>
-              <div className="card-reveal">
-                <strong className="card-title grey-text text-darken-4">
-                  Reddit
-                  <i className="material-icons right" arial-label="close">
-                    close
-                  </i>
-                </strong>
-                <article className="card-description">
-                  <strong>Overview:</strong>
-                  <p>
-                    This full-stack app recreates the look and feel of Reddit.
-                  </p>
-                  <strong>Features Included:</strong>
-                  <p>
-                    Users can login and logout using Auth0 and see their
-                    profile, they can make new posts to the homepage and to a
-                    subreddit, and they can upvote and downvote posts created.
-                  </p>
-                  <strong>Technologies Used:</strong>
-                  <p>
-                    C#, .NET Core, Entity Framework, Auth0, Heroku, PostgreSQL,
-                    React.js, Bulma CSS Framework, CSS Flexbox, HTML5
-                  </p>
-                </article>
-              </div>
-            </div>
-
-            <div className="card sticky-action">
-              <div className="card-image waves-effect waves-block waves-light">
-                <img
-                  className="activator"
-                  src={images.tv_guide}
-                  alt="tv guide project"
-                />
-              </div>
-              <div className="card-content">
-                <div className="card-title activator">
-                  TV Guide
-                  <i
-                    className="material-icons right"
-                    arial-label="more options"
-                  >
-                    more_vert
-                  </i>
-                </div>
-              </div>
-              <div className="card-action">
-                <a
-                  href="https://tvguide-project.netlify.app/"
-                  className="waves-effect waves-light btn"
-                >
-                  Live
-                </a>
-                <a
-                  href="https://github.com/mallorysmith64/tv-guide"
-                  className="waves-effect waves-light btn"
-                >
-                  Source
-                </a>
-              </div>
-              <div className="card-reveal">
-                <strong className="card-title grey-text text-darken-4">
-                  TV Guide
-                  <i className="material-icons right" arial-label="close">
-                    close
-                  </i>
-                </strong>
-                <article className="card-description">
-                  <strong>Overview:</strong>
-                  <p>
-                    Make an attractive design for a tv guide and show users a
-                    list of top-rated shows with a description, a highlighted
-                    random show at the top of the page, and details for cast
-                    members.
-                  </p>
-                  <strong>Technologies Used:</strong>
-                  <p>React.js, Netlify, CSS Flexbox, HTML5</p>
-                </article>
-              </div>
-            </div>
-
-            <div className="card sticky-action">
-              <div className="card-image waves-effect waves-block waves-light">
-                <img
-                  className="activator"
-                  src={images.minesweeper}
-                  alt="minesweeper project"
-                />
-              </div>
-              <div className="card-content">
-                <div className="card-title activator">
-                  Minesweeper
-                  <i
-                    className="material-icons right"
-                    arial-label="more options"
-                  >
-                    more_vert
-                  </i>
-                </div>
-              </div>
-              <div className="card-action">
-                <a
-                  href="https://minesweeper-2-frontend.up.railway.app/"
-                  className="waves-effect waves-light btn"
-                >
-                  Live
-                </a>
-                <a
-                  href="https://github.com/mallorysmith64/minesweeper"
-                  className="waves-effect waves-light btn"
-                >
-                  Source
-                </a>
-              </div>
-              <div className="card-reveal">
-                <strong className="card-title grey-text text-darken-4">
-                  Minesweeper
-                  <i className="material-icons right" arial-label="close">
-                    close
-                  </i>
-                </strong>
-                <article className="card-description">
-                  <strong>Overview:</strong>
-                  <p>
-                    Use RESTful API for some of the game logic, display a
-                    message to show player they won or lost, and allow the user
-                    to play multiple difficulty levels.
-                  </p>
-                  <strong>Technologies Used:</strong>
-                  <p>React.js, Netlify, CSS Flexbox, HTML5</p>
-                </article>
-              </div>
-            </div>
-          </div>
-
-          {/* Row 3: Octodex, Snake Game */}
-          <div className="project-row">
-            <div className="card sticky-action">
-              <div className="card-image waves-effect waves-block waves-light">
-                <img
-                  className="activator"
-                  src={images.octodex}
-                  alt="octodex project"
-                />
-              </div>
-              <div className="card-content">
-                <div className="card-title activator">
-                  Octodex
-                  <i
-                    className="material-icons right"
-                    arial-label="more options"
-                  >
-                    more_vert
-                  </i>
-                </div>
-              </div>
-              <div className="card-action">
-                <a
-                  href="https://react-octodex.netlify.app/"
-                  className="waves-effect waves-light btn"
-                >
-                  Live
-                </a>
-                <a
-                  href="https://github.com/marscannon42/react-octodex"
-                  className="waves-effect waves-light btn"
-                >
-                  Source
-                </a>
-              </div>
-              <div className="card-reveal">
-                <strong className="card-title grey-text text-darken-4">
-                  Octodex
-                  <i className="material-icons right" arial-label="close">
-                    close
-                  </i>
-                </strong>
-                <article className="card-description">
-                  <strong>Overview:</strong>
-                  <p>
-                    Made a fun gallery of my favorite octocats based on
-                    octodex.github.com
-                  </p>
-                  <strong>Technologies Used:</strong>
-                  <p>React.js, Netlify, CSS Flexbox, HTML5</p>
-                </article>
-              </div>
-            </div>
-
-            <div className="card sticky-action">
-              <div className="card-image waves-effect waves-block waves-light">
-                <img
-                  className="activator"
-                  src={images.tetris_deluxe}
-                  alt="tetris deluxe project"
-                />
-              </div>
-              <div className="card-content">
-                <div className="card-title activator">
-                  Tetris Deluxe
-                  <i
-                    className="material-icons right"
-                    arial-label="more options"
-                  >
-                    more_vert
-                  </i>
-                </div>
-              </div>
-              <div className="card-action">
-                <button className="button is-primary">Live</button>
-                <button className="button is-primary">Source</button>
-              </div>
-              <div className="card-reveal">
-                <strong className="card-title grey-text text-darken-4">
-                  Tetris Deluxe
-                  <i className="material-icons right" arial-label="close">
-                    close
-                  </i>
-                </strong>
-                <article className="card-description">
-                  <strong>Overview:</strong>
-                  <p>
-                    A modern take on the classic Tetris game with music playing
-                  </p>
-                  <strong>Technologies Used:</strong>
-                  <p>React.js, JavaScript, CSS, HTML</p>
-                </article>
-              </div>
-            </div>
-
-            <div className="card sticky-action">
-              <div className="card-image waves-effect waves-block waves-light">
-                <img
-                  className="activator"
-                  src={images.snake_game}
-                  alt="snake game project"
-                />
-              </div>
-              <div className="card-content">
-                <div className="card-title activator">
-                  Snake Game
-                  <i
-                    className="material-icons right"
-                    arial-label="more options"
-                  >
-                    more_vert
-                  </i>
-                </div>
-              </div>
-              <div className="card-action">
-                <a
-                  href="https://marssmith64.itch.io/snake-game-python"
-                  className="waves-effect waves-light btn"
-                >
-                  Live
-                </a>
-                <a
-                  href="https://github.com/mallorysmith64/snake-game-python"
-                  className="waves-effect waves-light btn"
-                >
-                  Source
-                </a>
-              </div>
-              <div className="card-reveal">
-                <strong className="card-title grey-text text-darken-4">
-                  Snake Game
-                  <i className="material-icons right" arial-label="close">
-                    close
-                  </i>
-                </strong>
-                <article className="card-description">
-                  <strong>Overview:</strong>
-                  <p>Built a classic fun game</p>
-                  <strong>Technologies Used:</strong>
-                  <p>Python, pygame</p>
-                </article>
-              </div>
-            </div>
-          </div>
+  return (
+    <div className="modal-overlay" onClick={onClose}>
+      <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+        <div className="modal-header">
+          <h3>{project.title}</h3>
+          <button className="modal-close-btn" onClick={onClose}>
+            ✕
+          </button>
         </div>
-      </>
-    );
-  }
-}
+        <div className="modal-body">
+          <article className="card-description">
+            <strong>Overview</strong>
+            <p>{project.overview}</p>
+
+            {project.features && (
+              <>
+                <strong>Features</strong>
+                <p>{project.features}</p>
+              </>
+            )}
+
+            <strong>Technologies Used</strong>
+            <p>{project.technologies}</p>
+          </article>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const ProjectCard = ({ project }) => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  return (
+    <>
+      <div className="card">
+        {project.image && (
+          <div className="card-image">
+            <img src={project.image} alt={project.title} />
+          </div>
+        )}
+        <div className="card-content">
+          <div
+            className="card-title"
+            onClick={() => setIsModalOpen(true)}
+            title="Click to view details"
+          >
+            {project.title}
+          </div>
+          <p className="card-description-preview">{project.overview}</p>
+        </div>
+        <div className="card-action">
+          {project.liveUrl && (
+            <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+              Live
+            </a>
+          )}
+          {!project.liveUrl && <button disabled>Live</button>}
+          <a href={project.sourceUrl} target="_blank" rel="noopener noreferrer">
+            Source
+          </a>
+          <button
+            onClick={() => setIsModalOpen(true)}
+            style={{ backgroundColor: "#8b5cf6" }}
+          >
+            Details
+          </button>
+        </div>
+      </div>
+      <ProjectModal
+        project={project}
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+      />
+    </>
+  );
+};
+
+const Projects = () => {
+  const getYear = new Date().getFullYear();
+
+  const projectsData = [
+    {
+      title: "Primate Image Classifier",
+      image: images.primate_image_classifier,
+      overview:
+        "Classify images of primates using machine learning powered by PyTorch.",
+      technologies: "PyTorch, Python",
+      liveUrl: "https://github.com/mallorysmith64/primate-species-classifier",
+      sourceUrl: "https://github.com/mallorysmith64/primate-species-classifier",
+    },
+    {
+      title: "Form Generator",
+      image: images.form_generator,
+      overview: "Generate dynamic forms with an intuitive interface.",
+      technologies:
+        "React.js, JavaScript, Flask, Python, MongoDB, CSS, HTML5",
+      liveUrl: "https://formgenerator.pro/",
+      sourceUrl: "https://github.com/mallorysmith64/form-generator",
+    },
+    {
+      title: "Cat Search Engine",
+      image: images.catsearch,
+      overview: "Search for cat memes and cat information with ease.",
+      technologies:
+        "React.js, JavaScript, Flask, Python, ElasticSearch, CSS Flexbox, HTML5",
+      liveUrl: "https://github.com/mallorysmith64/google-search",
+      sourceUrl: "https://github.com/mallorysmith64/google-search",
+    },
+    {
+      title: "Reddit Clone",
+      image: images.reddit,
+      overview: "Full-stack app that recreates the look and feel of Reddit.",
+      features:
+        "Users can login and logout using Auth0, see their profile, make new posts to the homepage and subreddits, and upvote/downvote posts.",
+      technologies:
+        "C#, .NET Core, Entity Framework, Auth0, Heroku, PostgreSQL, React.js, CSS Flexbox, HTML5",
+      liveUrl: "https://github.com/mallorysmith64/Reddit-Capstone",
+      sourceUrl: "https://github.com/mallorysmith64/Reddit-Capstone",
+    },
+    {
+      title: "TV Guide",
+      image: images.tv_guide,
+      overview:
+        "An attractive TV guide showing top-rated shows with descriptions and cast details.",
+      technologies: "React.js, Netlify, CSS Flexbox, HTML5",
+      liveUrl: "https://tvguide-project.netlify.app/",
+      sourceUrl: "https://github.com/mallorysmith64/tv-guide",
+    },
+    {
+      title: "Minesweeper",
+      image: images.minesweeper,
+      overview:
+        "Classic Minesweeper game with RESTful API for game logic and multiple difficulty levels.",
+      technologies: "React.js, Netlify, CSS Flexbox, HTML5",
+      liveUrl: "https://minesweeper-2-frontend.up.railway.app/",
+      sourceUrl: "https://github.com/mallorysmith64/minesweeper",
+    },
+    {
+      title: "Octodex",
+      image: images.octodex,
+      overview:
+        "A fun gallery of favorite octocats based on GitHub's Octodex.",
+      technologies: "React.js, Netlify, CSS Flexbox, HTML5",
+      liveUrl: "https://react-octodex.netlify.app/",
+      sourceUrl: "https://github.com/marscannon42/react-octodex",
+    },
+    {
+      title: "Tetris Deluxe",
+      image: images.tetris_deluxe,
+      overview:
+        "A modern take on the classic Tetris game with background music.",
+      technologies: "React.js, JavaScript, CSS, HTML",
+      liveUrl: null,
+      sourceUrl: "https://github.com/mallorysmith64/tetris-deluxe",
+    },
+    {
+      title: "Snake Game",
+      image: images.snake_game,
+      overview: "A classic and fun Snake game built with Python.",
+      technologies: "Python, pygame",
+      liveUrl: "https://marssmith64.itch.io/snake-game-python",
+      sourceUrl: "https://github.com/mallorysmith64/snake-game-python",
+    },
+  ];
+
+  return (
+    <>
+      <header className="header" id="projects">
+        <h2>Top Projects for {getYear}</h2>
+      </header>
+
+      <div className="project-container">
+        <div className="project-row">
+          {projectsData.map((project) => (
+            <ProjectCard key={project.title} project={project} />
+          ))}
+        </div>
+      </div>
+    </>
+  );
+};
 
 export default Projects;
