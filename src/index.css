@@ -93,6 +93,11 @@ main {
   border-color: var(--primary-light);
 }
 
+.card-image-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
 .card-image {
   position: relative;
   overflow: hidden;
@@ -114,6 +119,32 @@ main {
 
 .card-image img:hover {
   transform: scale(1.08);
+}
+
+.card-overlay-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.95);
+  border: none;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-primary);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  z-index: 10;
+}
+
+.card-overlay-btn:hover {
+  background-color: white;
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
 }
 
 .card-content {
@@ -144,14 +175,14 @@ main {
 .card-action {
   padding: 20px 24px;
   border-top: 1px solid var(--border);
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 12px;
   background-color: #fafafa;
 }
 
 .card-action a,
 .card-action button {
-  flex: 1;
   text-align: center;
   padding: 10px 16px;
   background-color: var(--primary);
@@ -315,15 +346,6 @@ main {
 
   .project-row {
     grid-template-columns: 1fr;
-  }
-
-  .card-action {
-    flex-direction: column;
-  }
-
-  .card-action a,
-  .card-action button {
-    width: 100%;
   }
 
   .modal-content {
