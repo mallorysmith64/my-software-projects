@@ -60,8 +60,6 @@ const ProjectCard = ({ project }) => {
 };
 
 const Projects = () => {
-  const getYear = new Date().getFullYear();
-
   const projectsData = [
     {
       title: "Primate Image Classifier",
@@ -150,7 +148,7 @@ const Projects = () => {
   return (
     <>
       <header className="header" id="projects">
-        <h2>Top Projects for {getYear}</h2>
+        <h2>All Projects</h2>
       </header>
 
       <div className="project-container">

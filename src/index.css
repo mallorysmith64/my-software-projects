@@ -11,12 +11,6 @@ html, body, #root {
   font-family: "Poppins", sans-serif;
 }
 
-body {
-  background-color: #f8f9fa;
-  color: #1a1a1a;
-  line-height: 1.6;
-}
-
 /* Modern Color Scheme */
 :root {
   --primary: #3b82f6;
@@ -260,7 +254,6 @@ main {
   color: white;
   padding: 32px 20px;
   text-align: center;
-  margin-top: 60px;
 }
 
 .footer-container {
