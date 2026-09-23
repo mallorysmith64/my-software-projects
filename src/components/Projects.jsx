@@ -27,12 +27,12 @@ class Projects extends Component {
               </div>
               <div className="card-action">
                 {/* placeholder url */}
-                <a href="https://github.com/mallorysmith64/primate-species-classifier" className="waves-effect waves-light btn">
+                <a href="https://github.com/mallorysmith64/primate-species-classifier" className="button is-primary">
                   Live
                 </a>
                 <a
                   href="https://github.com/mallorysmith64/primate-species-classifier"
-                  className="waves-effect waves-light btn"
+                  className="button is-primary"
                 >
                   Source
                 </a>
@@ -398,12 +398,8 @@ class Projects extends Component {
                 </div>
               </div>
               <div className="card-action">
-                <a href="TODO" className="waves-effect waves-light btn">
-                  Live
-                </a>
-                <a href="TODO" className="waves-effect waves-light btn">
-                  Source
-                </a>
+                <button className="button is-primary">Live</button>
+                <button className="button is-primary">Source</button>
               </div>
               <div className="card-reveal">
                 <strong className="card-title grey-text text-darken-4">

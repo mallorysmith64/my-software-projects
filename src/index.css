@@ -2,6 +2,7 @@
 :root {
   --primary-color: #1976d2;
   --secondary-color: #0d47a1;
+  --app-bg: #51B09D;
   --text-color: #212121;
   --text-light: #757575;
   --bg-light: #fafafa;
@@ -22,7 +23,7 @@ html, body, #root {
 }
 
 body {
-  background-color: var(--bg-light);
+  background-color: var(--app-bg);
   color: var(--text-color);
   line-height: 1.6;
 }
@@ -542,7 +543,20 @@ header {
   opacity: 0.9;
 }
 
-/* Utility Classes */
+/* Compatibility for legacy Materialize button classes */
+.waves-effect.waves-light.btn {
+  display: inline-block;
+  padding: .5rem 1rem;
+  border-radius: 4px;
+  background-color: #3273dc; /* Bulma primary color */
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+.waves-effect.waves-light.btn:hover {
+  background-color: #276cda;
+}
+
 .center {
   text-align: center;
 }
